@@ -1,0 +1,11 @@
+pwn_all:
+    build: ./pwn_all
+    volumes:
+        - ./scripts:/var/pwn
+
+receive_flag:
+    build: ./receive_flag
+    volumes:
+        - ./scripts:/var/pwn
+    ports:
+        - "8888:8888"
