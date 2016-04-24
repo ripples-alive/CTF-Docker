@@ -10,4 +10,4 @@ USER pwn
 WORKDIR /var/pwn/pwning
 EXPOSE 8888
 
-CMD ["python2.7", "receive_flag.py"]
+CMD ["python2.7", "-u", "receive_flag.py"]

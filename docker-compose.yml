@@ -2,10 +2,13 @@ pwn_all:
     build: ./pwn_all
     volumes:
         - ./scripts:/var/pwn
+        - /etc/localtime:/etc/localtime:ro
+
 
 receive_flag:
     build: ./receive_flag
     volumes:
         - ./scripts:/var/pwn
+        - /etc/localtime:/etc/localtime:ro
     ports:
         - "8888:8888"
