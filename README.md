@@ -5,7 +5,7 @@ This is a docker compose project for running some useful scripts in CTF competit
 ## Usage
 
 ```sh
-git clone git@github.com:ripples-alive/CTF-Docker.git
+git clone git@github.com:ripples-alive/CTF-Docker.git --recursive
 cd CTF-Docker
 docker-compose build
 docker-compose up -d
