@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:0.9.18
 
 # apt-get
 RUN dpkg --add-architecture i386 && apt-get update \
