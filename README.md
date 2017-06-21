@@ -14,7 +14,7 @@ docker-compose up -d
 If you need to install extra dependency to run the pwning scripts, exec a shell on the pwn_all container:
 
 ```sh
-docker exec -it ctfdocker_pwn_all_1 /bin/bash
+docker-compose exec bash
 ```
 
 Then, you can freely run any dependency installation commands.

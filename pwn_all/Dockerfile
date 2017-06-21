@@ -1,20 +1,10 @@
-FROM phusion/baseimage:0.9.18
+FROM pwntools/pwntools:stable
 
-# apt-get
-RUN dpkg --add-architecture i386 && apt-get update \
-    && apt-get install -y python2.7 python2.7-dev python-pip wget git
+USER root
 
-# pwntools
-RUN apt-get install -y software-properties-common \
-    && apt-add-repository -y ppa:pwntools/binutils \
-    && apt-get update \
-    && apt-get install -y \
-        binutils-i386-linux-gnu \
-        binutils-arm-linux-gnu \
-        binutils-aarch64-linux-gnu \
-        binutils-mips-linux-gnu \
-        binutils-mips64-linux-gnu \
-    && pip install git+https://github.com/Gallopsled/pwntools#egg=pwntools --upgrade
+# set timezone
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ >/etc/timezone
 
 # add user
 RUN groupadd -r pwn && useradd -r -g pwn pwn

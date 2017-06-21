@@ -1,14 +1,16 @@
-pwn_all:
+version: '3'
+
+services:
+  pwn-all:
     build: ./pwn_all
+    image: ripples/ctf-pwn-all
     volumes:
-        - ./scripts:/var/pwn
-        - /etc/localtime:/etc/localtime:ro
+      - ./scripts:/var/pwn
 
-
-receive_flag:
+  receive-flag:
     build: ./receive_flag
+    image: ripples/ctf-receive-flag
     volumes:
-        - ./scripts:/var/pwn
-        - /etc/localtime:/etc/localtime:ro
+      - ./scripts:/var/pwn
     ports:
-        - "8888:8888"
+      - "8888:8888"
